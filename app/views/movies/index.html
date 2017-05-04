@@ -1,0 +1,28 @@
+<h1>영화검색</h1>
+
+<div class="container">
+    <form action="/search">
+        <div class="form-group">
+        <label for="title">영화 추가</label>
+        <input type="text" class="form-control" id="title" name="title" placeholder="영화">
+        </div>
+      <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+    
+    <!--<p>title = <%=@movie_title %></p>-->
+    <!--<p>released = <%=@movie_released %></p>-->
+    <!--<img src='<%=@movie_poster%>'>-->
+</div>
+
+<h2>검색했던 결과들</h2>
+
+<% @allMovie.each do |p| %>
+
+제목: <a href="/show/<%= p.id %>"><%= p.title %></a>
+
+<a href="/edit/<%= p.id %>">update</a>       
+<a href="/delete/<%= p.id %>">delete</a>       
+
+<hr>
+
+<% end %>
